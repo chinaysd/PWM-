@@ -1,0 +1,266 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    09/03/2018  12:21:30  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL4\C51\BIN\BL51.EXE STARTUP.obj, main.obj, IO_Init.obj, bsp_pwm.obj TO FullResources RAMSIZE (256) CODE (0X100)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  main.obj (MAIN)
+  IO_Init.obj (IO_INIT)
+  bsp_pwm.obj (BSP_PWM)
+
+
+LINK MAP OF MODULE:  FullResources (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0007H     UNIT         ?DT?MAIN
+            IDATA   000FH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0040H                  *** GAP ***
+            CODE    0043H     0003H     ABSOLUTE     
+                    0046H     00BAH                  *** GAP ***
+            CODE    0100H     005EH     UNIT         ?PR?BSP_PWMHANDLE?MAIN
+            CODE    015EH     001AH     UNIT         ?C_C51STARTUP
+            CODE    0178H     0015H     UNIT         ?PR?IO_INIT?IO_INIT
+            CODE    018DH     0015H     UNIT         ?PR?PWM_INIT?BSP_PWM
+            CODE    01A2H     0012H     UNIT         ?PR?MAIN?MAIN
+            CODE    01B4H     0007H     UNIT         ?PR?PWM_OPEN?BSP_PWM
+
+
+
+OVERLAY MAP OF MODULE:   FullResources (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?IO_INIT?IO_INIT
+  +--> ?PR?PWM_INIT?BSP_PWM
+  +--> ?PR?PWM_OPEN?BSP_PWM
+
+?PR?PWM_OPEN?BSP_PWM
+  +--> ?PR?PWM_INIT?BSP_PWM
+
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/03/2018  12:21:30  PAGE 2
+
+
+SYMBOL TABLE OF MODULE:  FullResources (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:015EH         SEGMENT       ?C_C51STARTUP
+  I:000FH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0100H         SYMBOL        IDATALEN
+  C:0161H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:015EH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0100H         SYMBOL        XDATALEN
+  C:016CH         SYMBOL        XDATALOOP
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:015EH         LINE#         133
+  C:0160H         LINE#         134
+  C:0161H         LINE#         135
+  C:0162H         LINE#         136
+  C:0164H         LINE#         140
+  C:0167H         LINE#         141
+  C:0169H         LINE#         145
+  C:016BH         LINE#         147
+  C:016CH         LINE#         148
+  C:016DH         LINE#         149
+  C:016EH         LINE#         150
+  C:0170H         LINE#         151
+  C:0172H         LINE#         185
+  C:0175H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00D8H         PUBLIC        P5
+  C:0100H         PUBLIC        Bsp_PwmHandle
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/03/2018  12:21:30  PAGE 3
+
+
+  D:00D7H         PUBLIC        PWMDTY2
+  D:0008H         PUBLIC        flag
+  C:01A2H         PUBLIC        main
+  B:00A0H.1       PUBLIC        P21
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00D2H         PUBLIC        PWMCON
+  D:0009H         PUBLIC        Para_t
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:01A2H         LINE#         15
+  C:01A2H         LINE#         16
+  C:01A2H         LINE#         17
+  C:01A5H         LINE#         18
+  C:01A8H         LINE#         20
+  C:01A8H         LINE#         21
+  C:01A8H         LINE#         22
+  C:01ACH         LINE#         23
+  C:01ACH         LINE#         24
+  C:01AFH         LINE#         25
+  C:01B2H         LINE#         26
+  C:01B2H         LINE#         27
+  -------         ENDPROC       MAIN
+  -------         PROC          BSP_PWMHANDLE
+  C:0100H         LINE#         31
+  C:010BH         LINE#         32
+  C:010EH         LINE#         33
+  C:0110H         LINE#         34
+  C:0123H         LINE#         35
+  C:0123H         LINE#         36
+  C:0129H         LINE#         37
+  C:0130H         LINE#         38
+  C:0130H         LINE#         39
+  C:0133H         LINE#         40
+  C:0135H         LINE#         41
+  C:013AH         LINE#         42
+  C:013AH         LINE#         43
+  C:013FH         LINE#         44
+  C:013FH         LINE#         45
+  C:0141H         LINE#         46
+  C:0144H         LINE#         47
+  C:0149H         LINE#         48
+  C:0149H         LINE#         49
+  C:014DH         LINE#         50
+  C:014DH         LINE#         51
+  C:014FH         LINE#         52
+  C:014FH         LINE#         53
+  C:0153H         LINE#         54
+  C:0153H         LINE#         55
+  C:0155H         LINE#         56
+  C:0155H         LINE#         57
+  C:0155H         LINE#         60
+  -------         ENDPROC       BSP_PWMHANDLE
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        IO_INIT
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/03/2018  12:21:30  PAGE 4
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00D8H         PUBLIC        P5
+  D:00A8H         PUBLIC        IE
+  C:0178H         PUBLIC        IO_Init
+  D:009BH         PUBLIC        P0PH
+  D:00B8H         PUBLIC        IP
+  D:0092H         PUBLIC        P1PH
+  D:00A2H         PUBLIC        P2PH
+  D:00DAH         PUBLIC        P5PH
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:009AH         PUBLIC        P0CON
+  D:0091H         PUBLIC        P1CON
+  D:00A1H         PUBLIC        P2CON
+  D:00D9H         PUBLIC        P5CON
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          IO_INIT
+  C:0178H         LINE#         8
+  C:0178H         LINE#         9
+  C:0178H         LINE#         11
+  C:017BH         LINE#         12
+  C:017EH         LINE#         13
+  C:0180H         LINE#         14
+  C:0182H         LINE#         15
+  C:0185H         LINE#         16
+  C:0187H         LINE#         17
+  C:018AH         LINE#         18
+  C:018CH         LINE#         48
+  -------         ENDPROC       IO_INIT
+  -------         ENDMOD        IO_INIT
+
+  -------         MODULE        BSP_PWM
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00D8H         PUBLIC        P5
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:00D7H         PUBLIC        PWMDTY2
+  D:00D4H         PUBLIC        PWMDTYA
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00A9H         PUBLIC        IE1
+  D:00D1H         PUBLIC        PWMCFG
+  D:00D2H         PUBLIC        PWMCON
+  D:00D3H         PUBLIC        PWMPRD
+  D:00C8H         PUBLIC        T2CON
+  C:01B4H         PUBLIC        PWM_Open
+  C:018DH         PUBLIC        PWM_Init
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          PWM_INIT
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/03/2018  12:21:30  PAGE 5
+
+
+  C:018DH         LINE#         9
+  C:018DH         LINE#         10
+  C:018DH         LINE#         11
+  C:0190H         LINE#         12
+  C:0193H         LINE#         13
+  C:0196H         LINE#         14
+  C:0199H         LINE#         15
+  C:019CH         LINE#         16
+  C:019FH         LINE#         17
+  C:01A1H         LINE#         18
+  -------         ENDPROC       PWM_INIT
+  -------         PROC          PWM_OPEN
+  C:01B4H         LINE#         21
+  C:01B4H         LINE#         22
+  C:01B4H         LINE#         23
+  C:01B7H         LINE#         24
+  C:01BAH         LINE#         25
+  -------         ENDPROC       PWM_OPEN
+  -------         ENDMOD        BSP_PWM
+
+Program Size: data=16.0 xdata=0 code=193
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
